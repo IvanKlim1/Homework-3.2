@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.netology.NoteServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-28T15:02:46" hostname="NARUTO" time="0.513">
+  <properties/>
+  <testcase name="createCommentNote" classname="ru.netology.NoteServiceTest" time="0.513"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

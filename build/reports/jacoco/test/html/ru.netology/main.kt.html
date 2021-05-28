@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Homework 2.2</a> &gt; <a href="index.source.html" class="el_package">ru.netology</a> &gt; <span class="el_source">main.kt</span></div><h1>main.kt</h1><pre class="source lang-java linenums">
+package ru.netology
+
+<span class="fc" id="L4">data class Post(</span>
+<span class="fc" id="L5">    val id: Int,</span>
+<span class="fc" id="L6">    val ownerId: Int,</span>
+<span class="nc" id="L7">    val fromId: Int,</span>
+<span class="nc" id="L8">    val createdBy: Int,</span>
+<span class="fc" id="L9">    val date: Int,</span>
+<span class="nc" id="L10">    val text: String,</span>
+<span class="nc" id="L11">    val replyOwnerId: Int,</span>
+<span class="nc" id="L12">    val replyPostId: Int,</span>
+<span class="nc" id="L13">    val friendsOnly: Int,</span>
+<span class="nc" id="L14">    val comments: String,</span>
+<span class="nc" id="L15">    val copyright: String,</span>
+<span class="nc" id="L16">    val likes: Int,</span>
+<span class="nc" id="L17">    val reposts: Int,</span>
+<span class="nc" id="L18">    val views: Int,</span>
+<span class="nc" id="L19">    val post_type: String,</span>
+<span class="nc" id="L20">    val signerId: Int,</span>
+<span class="nc" id="L21">    val canPin: Boolean,</span>
+<span class="nc" id="L22">    val canDelete: Boolean,</span>
+<span class="nc" id="L23">    val canEdit: Boolean,</span>
+<span class="nc" id="L24">    val isPinned: Boolean,</span>
+<span class="nc" id="L25">    val markedAsAds: Boolean,</span>
+<span class="nc" id="L26">    val isFavorite: Boolean,</span>
+<span class="nc" id="L27">    val donut: String,</span>
+<span class="nc" id="L28">    val postponedId: Int,</span>
+)
+
+<span class="fc" id="L31">class WallService {</span>
+<span class="pc" id="L32">    var posts = emptyArray&lt;Post&gt;()</span>
+    fun add(post: Post): Post {
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        var post = post.copy(id = if (posts.isEmpty()) 1 else posts.last().id + 1)</span>
+<span class="fc" id="L35">        posts += post</span>
+<span class="fc" id="L36">        return posts.last()</span>
+    }
+
+    fun update(post: Post): Boolean {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for ((index, currentPost) in posts.withIndex()) {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            if (post.id == currentPost.id) {</span>
+<span class="fc" id="L42">                posts[index] = post.copy(ownerId = currentPost.ownerId, date = currentPost.date)</span>
+<span class="fc" id="L43">                return true</span>
+            }
+        }
+<span class="fc" id="L46">        return false</span>
+    }
+}
+
+fun main() {
+
+<span class="nc" id="L52">}</span>
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
