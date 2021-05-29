@@ -31,7 +31,7 @@ class NoteServiceTest {
             1,2,true
         ))
         val comment=service.createCommentNote(Comment(
-            2,3,1,1,1,"asd",1,1,1,
+            1,2,3,1,1,1,"asd",1,1,1,
             1,1,1
         ))
     }
@@ -45,28 +45,150 @@ class NoteServiceTest {
             1,2,true
         ))
         val comment=service.createCommentNote(Comment(
-            1,3,1,1,1,"asd",1,1,1,
+            1,1,3,1,1,1,"asd",1,1,1,
             1,1,1
         ))
     }
 
     @Test
-    fun deleteNote() {
+    fun TruedeleteNote() {
+        val service=NoteService()
+        val added=service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,12,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val delete=service.deleteNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,1,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+
+    }
+    @Test
+    fun FalseDeleteNote() {
+        val service=NoteService()
+        val added=service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,12,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val delete=service.deleteNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,2,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+
     }
 
     @Test
     fun deleteCommentNote() {
+        val service=NoteService()
+        val added=service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,1,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val comment=service.deleteCommentNote(Comment(
+            1,1,3,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
+    }
+    @Test(expected = NoteNotFoundException::class)
+    fun FalseDeleteComment() {
+
+    }
+    @Test(expected = NoteNotFoundException::class)
+    fun deleteThrowNote() {
+        val service=NoteService()
+        val added=service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,1,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val comment=service.createCommentNote(Comment(
+            1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
+
     }
 
     @Test
-    fun editNote() {
+    fun TrueEditNote() {
+        val service=NoteService()
+        service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,12,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,12,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val update =(Note("a","b", listOf("a","b"), listOf("a","b","c") ,2,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true))
+        val result = service.editNote(update)
+
+        assertTrue(result)
+
+    }
+    @Test
+    fun FalseEditNote() {
+        val service=NoteService()
+        service.addNote(Note(
+            "a","b", listOf("a","b"), listOf("a","b","c") ,12,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true
+        ))
+        val update =(Note("a","b", listOf("a","b"), listOf("a","b","c") ,2,2,3,"non",
+            "not",5, ArrayList(1,),1,1,
+            1,2,true))
+        val result = service.editNote(update)
+        assertFalse(result)
     }
 
     @Test
-    fun editComment() {
-    }
+    fun NoEditComment() {
+        val service=NoteService()
+        service.addComment(Comment(
+            1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
+        val update =(Comment(1,2,3,2,1,1,"asd",1,1,1,
+            1,1,1))
+        val result = service.editComment(update)
 
+        assertFalse(result)
+
+    }
     @Test
-    fun restoreComment() {
+    fun YesEditComment() {
+        val service=NoteService()
+        service.addComment(Comment(
+            1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
+        service.addComment(Comment(
+            1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
+        val update =(Comment(1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1))
+        val result = service.editComment(update)
+
+        assertTrue(result)
+
+    }
+    @Test(expected = NoteNotFoundException::class)
+    fun FalseRestoreComment() {
+        val service=NoteService()
+        val comment=service.restoreComment(Comment(1,2,3,1,1,1,"asd",1,1,1,
+            1,1,1))
+    }
+    @Test
+    fun TrueRestoreComment() {
+
     }
 }

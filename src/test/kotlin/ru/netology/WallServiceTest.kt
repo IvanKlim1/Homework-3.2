@@ -265,7 +265,7 @@ class WallServiceTest {
                   true, "asd", 1, "VK", 1, "yes"
                ))
         val comment=service.createComment(Comment(
-                  1,3,1,1,1,"asd",1,1,1,
+                  1,1,3,1,1,1,"asd",1,1,1,
                   1,1,1
                ))
     }
@@ -279,7 +279,7 @@ class WallServiceTest {
              true, "asd", 1, "VK", 1, "yes"
           ))
         val comment=result.createComment(Comment(
-           1, 1,1,1,1,"asd",1,1,1,
+           1,1, 1,1,1,1,"asd",1,1,1,
             1,1,1
         ))
     }

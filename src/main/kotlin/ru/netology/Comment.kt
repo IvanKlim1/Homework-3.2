@@ -3,6 +3,7 @@ package ru.netology
 import java.util.*
 
 data class Comment(
+    val ownerId:Int,
     val noteId:Int,
     val postId:Int,
     val id: Int,
