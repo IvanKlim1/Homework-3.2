@@ -95,10 +95,6 @@ class NoteServiceTest {
         ))
     }
     @Test(expected = NoteNotFoundException::class)
-    fun FalseDeleteComment() {
-
-    }
-    @Test(expected = NoteNotFoundException::class)
     fun deleteThrowNote() {
         val service=NoteService()
         val added=service.addNote(Note(
