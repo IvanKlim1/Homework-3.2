@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>wallService.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Homework 2.2</a> &gt; <a href="index.source.html" class="el_package">ru.netology</a> &gt; <span class="el_source">wallService.kt</span></div><h1>wallService.kt</h1><pre class="source lang-java linenums">package ru.netology
+
+<span class="fc" id="L3">class WallService {</span>
+<span class="pc" id="L4">    var posts = emptyArray&lt;Post&gt;()</span>
+<span class="fc" id="L5">    private var comments = emptyArray&lt;Comment&gt;()</span>
+
+    fun add(post: Post): Post {
+<span class="fc bfc" id="L8" title="All 4 branches covered.">        var post = post.copy(id = if (posts.isEmpty()) 1 else posts.last().id + 1)</span>
+<span class="fc" id="L9">        posts += post</span>
+<span class="fc" id="L10">        return posts.last()</span>
+    }
+
+    fun update(post: Post): Boolean {
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for ((index, currentPost) in posts.withIndex()) {</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">            if (post.id == currentPost.id) {</span>
+<span class="fc" id="L16">                posts[index] = post.copy(ownerId = currentPost.ownerId, date = currentPost.date)</span>
+<span class="fc" id="L17">                return true</span>
+            }
+        }
+<span class="fc" id="L20">        return false</span>
+    }
+
+    fun createComment(comment: Comment) {
+<span class="fc bfc" id="L24" title="All 6 branches covered.">        if (posts.none { it.id == comment.postId }) {</span>
+<span class="fc" id="L25">            throw PostNotFoundException(&quot;no post with id&quot;)</span>
+        }
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        comments + comment.copy(id = comments.lastOrNull()?.id ?: 0)</span>
+<span class="fc" id="L28">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
