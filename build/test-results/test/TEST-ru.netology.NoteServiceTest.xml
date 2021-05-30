@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.NoteServiceTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2021-05-29T16:14:37" hostname="NARUTO" time="0.373">
+<testsuite name="ru.netology.NoteServiceTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2021-05-30T19:09:24" hostname="NARUTO" time="0.427">
   <properties/>
-  <testcase name="deleteCommentNote" classname="ru.netology.NoteServiceTest" time="0.356"/>
+  <testcase name="TrueGetComment" classname="ru.netology.NoteServiceTest" time="0.403"/>
+  <testcase name="deleteCommentNote" classname="ru.netology.NoteServiceTest" time="0.006"/>
+  <testcase name="deleteCommentFromNonExistentNote_Exception" classname="ru.netology.NoteServiceTest" time="0.002"/>
   <testcase name="FalseEditNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="createCommentNote" classname="ru.netology.NoteServiceTest" time="0.002"/>
+  <testcase name="createCommentNote" classname="ru.netology.NoteServiceTest" time="0.003"/>
   <testcase name="addNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="TrueGetById" classname="ru.netology.NoteServiceTest" time="0.001"/>
   <testcase name="FalseDeleteNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="TrueRestoreComment" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="deleteThrowNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="TrueRestoreComment" classname="ru.netology.NoteServiceTest" time="0.002"/>
+  <testcase name="deleteThrowNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
   <testcase name="shouldThrow" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="getNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
   <testcase name="TruedeleteNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="NoEditComment" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="YesEditComment" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="TrueEditNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="FalseRestoreComment" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="NoEditComment" classname="ru.netology.NoteServiceTest" time="0.0"/>
+  <testcase name="YesEditComment" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="TrueEditNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
+  <testcase name="FalseRestoreComment" classname="ru.netology.NoteServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

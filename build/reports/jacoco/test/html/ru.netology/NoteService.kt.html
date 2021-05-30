@@ -3,72 +3,100 @@
 <span class="fc" id="L3">class NoteService {</span>
 <span class="pc" id="L4">    var notes = emptyArray&lt;Note&gt;()</span>
 <span class="fc" id="L5">    private var comments = emptyArray&lt;Comment&gt;()</span>
-    fun addComment(comment: Comment):Comment {
+    fun addComment(comment: Comment): Comment {
 <span class="fc bfc" id="L7" title="All 4 branches covered.">        comments += comment.copy(id = if (comments.isEmpty()) 1 else comments.last().id + 1)</span>
 <span class="fc" id="L8">        return comments.last()</span>
     }
+
     fun addNote(note: Note): Note {
-<span class="fc bfc" id="L11" title="All 4 branches covered.">        notes += note.copy(noteId = if (notes.isEmpty()) 1 else notes.last().noteId + 1)</span>
-<span class="fc" id="L12">        return notes.last()</span>
+<span class="fc bfc" id="L12" title="All 4 branches covered.">        notes += note.copy(noteId = if (notes.isEmpty()) 1 else notes.last().noteId + 1)</span>
+<span class="fc" id="L13">        return notes.last()</span>
     }
 
     fun createCommentNote(comment: Comment) {
-<span class="fc bfc" id="L16" title="All 6 branches covered.">        if (notes.none { it.noteId == comment.noteId }) {</span>
-<span class="fc" id="L17">            throw NoteNotFoundException(&quot;no note with id&quot;)</span>
+<span class="fc bfc" id="L17" title="All 6 branches covered.">        if (notes.none { it.noteId == comment.noteId }) {</span>
+<span class="fc" id="L18">            throw NoteNotFoundException(&quot;no note with id&quot;)</span>
         }
-<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        comments + comment.copy(id = comments.lastOrNull()?.id ?: 0)</span>
-<span class="fc" id="L20">    }</span>
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        comments + comment.copy(id = comments.lastOrNull()?.id ?: 0)</span>
+<span class="fc" id="L21">    }</span>
 
     fun deleteNote(note: Note): List&lt;Note&gt; {
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        for ((index, deleteNote) in notes.withIndex()) {</span>
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">            if (notes[index].noteId == deleteNote.noteId) {</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">                notes = notes.filterNot { it == note }</span>
-<span class="fc" id="L26">                    .toTypedArray()</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        for ((index, deleteNote) in notes.withIndex()) {</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">            if (notes[index].noteId == deleteNote.noteId) {</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                notes = notes.filterNot { it == note }</span>
+<span class="fc" id="L27">                    .toTypedArray()</span>
             }
         }
-<span class="fc" id="L29">        return notes.toList()</span>
+<span class="fc" id="L30">        return notes.toList()</span>
     }
 
     fun deleteCommentNote(comment: Comment): List&lt;Comment&gt; {
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        for ((index, deleteComment) in notes.withIndex()) {</span>
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">            if (notes[index].ownerId == deleteComment.ownerId) {</span>
-<span class="pc bnc" id="L35" title="All 4 branches missed.">                comments = comments.filterNot { it.id == comment.id }</span>
-<span class="fc" id="L36">                    .toTypedArray()</span>
-            } else {
-<span class="nc" id="L38">                throw NoteNotFoundException(&quot;error&quot;)</span>
+<span class="pc bfc" id="L34" title="All 2 branches covered.">        for ((index, deleteComment) in comments.withIndex()) {</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">            if (notes[index].noteId == deleteComment.noteId) {</span>
+<span class="pc bpc" id="L36" title="2 of 4 branches missed.">                comments = comments.filterNot { it.id == comment.id }</span>
+<span class="fc" id="L37">                    .toTypedArray()</span>
+<span class="fc" id="L38">                return comments.toList()</span>
             }
         }
-<span class="fc" id="L41">        return comments.toList()</span>
+        // Р‘СЂРѕСЃР°РµРј РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё РѕР±РѕС€Р»Рё РІРµСЃСЊ СЃРїРёСЃРѕРє Рё РЅРёС‡РµРіРѕ РЅРµ РЅР°С€Р»Рё,
+<span class="fc" id="L42">        throw NoteNotFoundException(&quot;error&quot;)</span>
     }
 
     fun editNote(note: Note): Boolean {
-<span class="fc bfc" id="L45" title="All 2 branches covered.">        for ((index, currentNote) in notes.withIndex()) {</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (note.noteId == currentNote.noteId) {</span>
-<span class="fc" id="L47">                notes[index] = note.copy(ownerId = currentNote.ownerId)</span>
-<span class="fc" id="L48">                return true</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        for ((index, currentNote) in notes.withIndex()) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">            if (note.noteId == currentNote.noteId) {</span>
+<span class="fc" id="L48">                notes[index] = note.copy(ownerId = currentNote.ownerId)</span>
+<span class="fc" id="L49">                return true</span>
             }
         }
-<span class="fc" id="L51">        return false</span>
+<span class="fc" id="L52">        return false</span>
     }
 
     fun editComment(comment: Comment): Boolean {
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        for ((index, currentComment) in comments.withIndex()) {</span>
-<span class="fc bfc" id="L56" title="All 2 branches covered.">            if (comment.id == currentComment.id) {</span>
-<span class="fc" id="L57">                comments[index] = comment.copy(id = currentComment.id)</span>
-<span class="fc" id="L58">                return true</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for ((index, currentComment) in comments.withIndex()) {</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            if (comment.id == currentComment.id) {</span>
+<span class="fc" id="L58">                comments[index] = comment.copy(id = currentComment.id)</span>
+<span class="fc" id="L59">                return true</span>
             }
         }
-<span class="fc" id="L61">        return false</span>
+<span class="fc" id="L62">        return false</span>
     }
 
-    fun restoreComment(comment: Comment) {
-<span class="fc" id="L65">        val deleteComment = deleteCommentNote(comment)</span>
-<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if (deleteComment.indexOf(comment) == comment.id) {</span>
-<span class="nc" id="L67">            comments += deleteComment</span>
-        } else {
-<span class="fc" id="L69">            throw NoteNotFoundException(&quot;error&quot;)</span>
+    fun get(note: Note) {
+<span class="fc" id="L66">        notes</span>
+<span class="fc" id="L67">    }</span>
+
+    fun getById(note: Note): Boolean {
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        for ((index) in notes.withIndex()) {</span>
+<span class="pc bpc" id="L71" title="2 of 4 branches missed.">            if (notes[index].noteId == note.noteId &amp;&amp; notes[index].ownerId == note.ownerId) {</span>
+<span class="fc" id="L72">                note</span>
+            }
+<span class="fc" id="L74">            return true</span>
         }
-<span class="nc" id="L71">    }</span>
+<span class="nc" id="L76">        return false</span>
+    }
+
+    fun getComment(comment: Comment): Boolean {
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        for ((index) in comments.withIndex()) {</span>
+            if (notes[index].noteId == comments[index].noteId
+<span class="pc bpc" id="L82" title="2 of 4 branches missed.">                &amp;&amp; notes[index].ownerId == comments[index].ownerId</span>
+            ) {
+<span class="fc" id="L84">                comment</span>
+            }
+<span class="fc" id="L86">            return true</span>
+        }
+<span class="nc" id="L88">        return false</span>
+    }
+
+    fun restoreComment(comment: Comment): List&lt;Comment&gt; {
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        for ((index, restoreComment) in comments.withIndex()) {</span>
+<span class="pc bpc" id="L93" title="1 of 4 branches missed.">            if (notes[index].noteId == restoreComment.noteId &amp;&amp; comment.id == restoreComment.id) {</span>
+<span class="fc" id="L94">                comments += restoreComment</span>
+<span class="fc" id="L95">                return comments.toList()</span>
+            }
+        }
+<span class="fc" id="L98">        throw NoteNotFoundException(&quot;error&quot;)</span>
+    }
 }
 
 

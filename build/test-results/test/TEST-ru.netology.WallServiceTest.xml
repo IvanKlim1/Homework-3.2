@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.WallServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-29T16:14:38" hostname="NARUTO" time="0.153">
+<testsuite name="ru.netology.WallServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-30T19:09:25" hostname="NARUTO" time="0.255">
   <properties/>
-  <testcase name="NonUpdate" classname="ru.netology.WallServiceTest" time="0.149"/>
+  <testcase name="NonUpdate" classname="ru.netology.WallServiceTest" time="0.252"/>
   <testcase name="addPost" classname="ru.netology.WallServiceTest" time="0.0"/>
-  <testcase name="createComment" classname="ru.netology.WallServiceTest" time="0.002"/>
+  <testcase name="createComment" classname="ru.netology.WallServiceTest" time="0.0"/>
   <testcase name="update" classname="ru.netology.WallServiceTest" time="0.0"/>
   <testcase name="shouldThrow" classname="ru.netology.WallServiceTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
