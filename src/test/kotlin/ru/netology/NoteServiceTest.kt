@@ -136,6 +136,6 @@ class NoteServiceTest {
             1, 3, "non",
             "not", 5, ArrayList(1), 1, 1,
             1, 2, true))
-        val result = service.getById(update)
+        val result = service.getById(id =1)
     }
 }

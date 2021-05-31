@@ -32,15 +32,8 @@ class NoteService:CrudService<Note> {
     fun get(note: Note){
         notes
     }
-    fun getById(note: Note): Boolean {
-        for ((index) in notes.withIndex()) {
-            if (notes[index].noteId == note.noteId && notes[index].ownerId == note.ownerId) {
-                note
-            }
-            return true
-        }
-        return false
-    }
+    override fun getById(id: Int): Note =
+    notes.first { it.noteId == id }
 }
 
 

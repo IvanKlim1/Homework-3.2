@@ -51,7 +51,7 @@ class CommentServiceTest {
         ))
         val update = comment.add(Comment(1, 1, 3, 1, 1, 1, "asd", 1, 1, 1,
             1, 1, 1))
-        val result = comment.get(update)
+        val result = comment.getById(id=1)
     }
 
     @Test

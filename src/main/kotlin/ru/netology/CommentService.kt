@@ -40,6 +40,7 @@ class CommentService(
             // Бросаем исключение, если обошли весь список и ничего не нашли,
             throw NoteNotFoundException("error")
     }
+
     fun restoreComment(comment: Comment): List<Comment> {
             for ((index, restoreComment) in comments.withIndex()) {
                 if (notes[index].noteId == restoreComment.noteId && comment.id == restoreComment.id) {
@@ -55,4 +56,7 @@ class CommentService(
         }
         comments + comment.copy(id = comments.lastOrNull()?.id ?: 0)
     }
+    override fun getById(id: Int):Comment =
+        comments.first { it.id == id }
+
 }
