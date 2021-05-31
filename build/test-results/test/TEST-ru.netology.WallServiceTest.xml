@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.WallServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-30T22:14:02" hostname="NARUTO" time="0.03">
+<testsuite name="ru.netology.WallServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-31T12:56:23" hostname="NARUTO" time="0.097">
   <properties/>
-  <testcase name="NonUpdate" classname="ru.netology.WallServiceTest" time="0.012"/>
+  <testcase name="NonUpdate" classname="ru.netology.WallServiceTest" time="0.095"/>
   <testcase name="addPost" classname="ru.netology.WallServiceTest" time="0.0"/>
-  <testcase name="createComment" classname="ru.netology.WallServiceTest" time="0.0"/>
-  <testcase name="update" classname="ru.netology.WallServiceTest" time="0.001"/>
-  <testcase name="shouldThrow" classname="ru.netology.WallServiceTest" time="0.001"/>
+  <testcase name="createComment" classname="ru.netology.WallServiceTest" time="0.001"/>
+  <testcase name="update" classname="ru.netology.WallServiceTest" time="0.0"/>
+  <testcase name="shouldThrow" classname="ru.netology.WallServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

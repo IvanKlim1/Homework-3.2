@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.CommentServiceTest" tests="8" skipped="0" failures="5" errors="0" timestamp="2021-05-30T22:14:01" hostname="NARUTO" time="0.439">
+<testsuite name="ru.netology.CommentServiceTest" tests="9" skipped="0" failures="5" errors="0" timestamp="2021-05-31T12:56:23" hostname="NARUTO" time="0.503">
   <properties/>
-  <testcase name="TrueGetComment" classname="ru.netology.CommentServiceTest" time="0.435">
+  <testcase name="TrueGetComment" classname="ru.netology.CommentServiceTest" time="0.496">
     <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.get(CommentService.kt:24)
-	at ru.netology.CommentServiceTest.TrueGetComment(CommentServiceTest.kt:53)
+	at ru.netology.CommentService.get(CommentService.kt:25)
+	at ru.netology.CommentServiceTest.TrueGetComment(CommentServiceTest.kt:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,8 +59,8 @@
   </testcase>
   <testcase name="deleteCommentNote" classname="ru.netology.CommentServiceTest" time="0.001">
     <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.delete(CommentService.kt:33)
-	at ru.netology.CommentServiceTest.deleteCommentNote(CommentServiceTest.kt:70)
+	at ru.netology.CommentService.delete(CommentService.kt:34)
+	at ru.netology.CommentServiceTest.deleteCommentNote(CommentServiceTest.kt:71)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -116,8 +116,8 @@
   <testcase name="deleteCommentFromNonExistentNote_Exception" classname="ru.netology.CommentServiceTest" time="0.001"/>
   <testcase name="createCommentNote" classname="ru.netology.CommentServiceTest" time="0.0">
     <failure message="ru.netology.NoteNotFoundException: no note with id" type="ru.netology.NoteNotFoundException">ru.netology.NoteNotFoundException: no note with id
-	at ru.netology.CommentService.createCommentNote(CommentService.kt:53)
-	at ru.netology.CommentServiceTest.createCommentNote(CommentServiceTest.kt:99)
+	at ru.netology.CommentService.createCommentNote(CommentService.kt:54)
+	at ru.netology.CommentServiceTest.createCommentNote(CommentServiceTest.kt:113)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -172,8 +172,8 @@
   </testcase>
   <testcase name="TrueRestoreComment" classname="ru.netology.CommentServiceTest" time="0.001">
     <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.restoreComment(CommentService.kt:44)
-	at ru.netology.CommentServiceTest.TrueRestoreComment(CommentServiceTest.kt:134)
+	at ru.netology.CommentService.restoreComment(CommentService.kt:45)
+	at ru.netology.CommentServiceTest.TrueRestoreComment(CommentServiceTest.kt:148)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -227,7 +227,8 @@
 </failure>
   </testcase>
   <testcase name="NoEditComment" classname="ru.netology.CommentServiceTest" time="0.0"/>
-  <testcase name="YesEditComment" classname="ru.netology.CommentServiceTest" time="0.001"/>
+  <testcase name="YesEditComment" classname="ru.netology.CommentServiceTest" time="0.0"/>
+  <testcase name="CommentThrow" classname="ru.netology.CommentServiceTest" time="0.0"/>
   <testcase name="FalseRestoreComment" classname="ru.netology.CommentServiceTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;ru.netology.NoteNotFoundException&gt; but was&lt;java.lang.ArrayIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;ru.netology.NoteNotFoundException&gt; but was&lt;java.lang.ArrayIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:30)
@@ -274,8 +275,8 @@
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:832)
 Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.restoreComment(CommentService.kt:44)
-	at ru.netology.CommentServiceTest.FalseRestoreComment(CommentServiceTest.kt:117)
+	at ru.netology.CommentService.restoreComment(CommentService.kt:45)
+	at ru.netology.CommentServiceTest.FalseRestoreComment(CommentServiceTest.kt:131)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

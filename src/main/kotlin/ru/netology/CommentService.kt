@@ -1,7 +1,8 @@
 package ru.netology
 
-
-class CommentService():CrudService<Comment> {
+class CommentService(
+    private val noteService: CrudService<Note>
+) : CrudService<Comment> {
     var notes = emptyArray<Note>()
     private var comments = emptyArray<Comment>()
     override fun add(comment: Comment): Comment {

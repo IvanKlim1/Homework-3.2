@@ -23,20 +23,6 @@ class NoteServiceTest {
 
     }
 
-    @Test(expected = NoteNotFoundException::class)
-    fun shouldThrow() {
-        val comments = CommentService()
-        val service = NoteService()
-        val added = service.add(Note(
-            "a", "b", listOf("a", "b"), listOf("a", "b", "c"), 1, 2, 3, "non",
-            "not", 5, ArrayList(1), 1, 1,
-            1, 2, true
-        ))
-        val comment = comments.createCommentNote(Comment(
-            1, 2, 3, 1, 1, 1, "asd", 1, 1, 1,
-            1, 1, 1
-        ))
-    }
 
     @Test
     fun TruedeleteNote() {
@@ -72,8 +58,8 @@ class NoteServiceTest {
 
     @Test(expected = NoteNotFoundException::class)
     fun deleteThrowNote() {
-        val comments = CommentService()
         val service = NoteService()
+        val comments = CommentService(service)
         val added = service.add(Note(
             "a", "b", listOf("a", "b"), listOf("a", "b", "c"), 1, 2, 3, "non",
             "not", 5, ArrayList(1), 1, 1,

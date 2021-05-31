@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">9</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.439s</div>
+<div class="counter">0.499s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">37%</div>
+<div class="percent">44%</div>
 <p>successful</p>
 </div>
 </td>
@@ -118,8 +118,8 @@
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:832)
 Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.restoreComment(CommentService.kt:44)
-	at ru.netology.CommentServiceTest.FalseRestoreComment(CommentServiceTest.kt:117)
+	at ru.netology.CommentService.restoreComment(CommentService.kt:45)
+	at ru.netology.CommentServiceTest.FalseRestoreComment(CommentServiceTest.kt:131)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,8 +138,8 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 <h3 class="failures">TrueGetComment</h3>
 <span class="code">
 <pre>java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.get(CommentService.kt:24)
-	at ru.netology.CommentServiceTest.TrueGetComment(CommentServiceTest.kt:53)
+	at ru.netology.CommentService.get(CommentService.kt:25)
+	at ru.netology.CommentServiceTest.TrueGetComment(CommentServiceTest.kt:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -198,8 +198,8 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 <h3 class="failures">TrueRestoreComment</h3>
 <span class="code">
 <pre>java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.restoreComment(CommentService.kt:44)
-	at ru.netology.CommentServiceTest.TrueRestoreComment(CommentServiceTest.kt:134)
+	at ru.netology.CommentService.restoreComment(CommentService.kt:45)
+	at ru.netology.CommentServiceTest.TrueRestoreComment(CommentServiceTest.kt:148)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -258,8 +258,8 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 <h3 class="failures">createCommentNote</h3>
 <span class="code">
 <pre>ru.netology.NoteNotFoundException: no note with id
-	at ru.netology.CommentService.createCommentNote(CommentService.kt:53)
-	at ru.netology.CommentServiceTest.createCommentNote(CommentServiceTest.kt:99)
+	at ru.netology.CommentService.createCommentNote(CommentService.kt:54)
+	at ru.netology.CommentServiceTest.createCommentNote(CommentServiceTest.kt:113)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -318,8 +318,8 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 <h3 class="failures">deleteCommentNote</h3>
 <span class="code">
 <pre>java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ru.netology.CommentService.delete(CommentService.kt:33)
-	at ru.netology.CommentServiceTest.deleteCommentNote(CommentServiceTest.kt:70)
+	at ru.netology.CommentService.delete(CommentService.kt:34)
+	at ru.netology.CommentServiceTest.deleteCommentNote(CommentServiceTest.kt:71)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -385,6 +385,11 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 </tr>
 </thead>
 <tr>
+<td class="success">CommentThrow</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="failures">FalseRestoreComment</td>
 <td class="failures">0s</td>
 <td class="failures">failed</td>
@@ -396,7 +401,7 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 </tr>
 <tr>
 <td class="failures">TrueGetComment</td>
-<td class="failures">0.435s</td>
+<td class="failures">0.496s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -406,7 +411,7 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 </tr>
 <tr>
 <td class="success">YesEditComment</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -434,7 +439,7 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for l
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.7</a> at 31 мая 2021 г., 01:14:03</p>
+<a href="http://www.gradle.org">Gradle 6.7</a> at 31 мая 2021 г., 15:56:25</p>
 </div>
 </div>
 </body>
