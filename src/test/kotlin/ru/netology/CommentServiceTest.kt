@@ -65,7 +65,7 @@ class CommentServiceTest {
         ))
         val note = Note(title = "a", text = "b", privacyView = listOf("a", "b"), privacyComment = listOf("a", "b", "c"),
             noteId = 1, ownerId = 2, replyTo = 3, message = "non", guid = "not", commentId = 1,
-            noteIds = ArrayList(1), userId = 1, offset = 1, count = 1, sort = 2, need_wiki = true
+            noteIds = ArrayList(1), userId = 1, offset = 1, count = 1, sort = 2, needWiki = true
         )
         service.add(note)
         comments.delete(comment)
@@ -82,7 +82,7 @@ class CommentServiceTest {
         )
         val note = Note(title = "a", text = "b", privacyView = listOf("a", "b"), privacyComment = listOf("a", "b", "c"),
             noteId = 12, ownerId = 2, replyTo = 3, message = "non", guid = "not", commentId = 5,
-            noteIds = ArrayList(1), userId = 1, offset = 1, count = 1, sort = 2, need_wiki = true
+            noteIds = ArrayList(1), userId = 1, offset = 1, count = 1, sort = 2, needWiki = true
         )
         service.add(note)
         comments.delete(comment)

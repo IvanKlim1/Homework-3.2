@@ -16,5 +16,5 @@ data class Note(
     val offset:Int,
     val count:Int,
     val sort:Int,
-    val need_wiki:Boolean
+    val needWiki:Boolean
 )
