@@ -3,7 +3,7 @@ package ru.netology
 class NoteService : CrudService<Note> {
     var notes = emptyArray<Note>()
     private var comments = emptyArray<Comment>()
-    fun getAll() = notes
+    override fun getAll() = notes
 
     override fun add(note: Note): Note {
         notes += note.copy(noteId = if (notes.isEmpty()) 1 else notes.last().noteId + 1)

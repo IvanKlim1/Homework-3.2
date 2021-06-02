@@ -5,4 +5,7 @@ interface CrudService<E> {
     fun delete(entity: E): List<E>
     fun edit(entity: E): Boolean
     fun getById(id: Int): E
+    fun getAll(): Array<E>
+
+
 }

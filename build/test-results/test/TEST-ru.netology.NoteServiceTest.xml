@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.NoteServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-05-31T16:10:05" hostname="NARUTO" time="0.006">
+<testsuite name="ru.netology.NoteServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-06-02T15:45:24" hostname="NARUTO" time="0.046">
   <properties/>
-  <testcase name="FalseEditNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="addNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="TrueGetById" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="FalseDeleteNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
-  <testcase name="deleteThrowNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="getNote" classname="ru.netology.NoteServiceTest" time="0.001"/>
-  <testcase name="TruedeleteNote" classname="ru.netology.NoteServiceTest" time="0.002"/>
-  <testcase name="TrueEditNote" classname="ru.netology.NoteServiceTest" time="0.0"/>
+  <testcase name="FalseEditNote" classname="ru.netology.NoteServiceTest" time="0.002"/>
+  <testcase name="addNote" classname="ru.netology.NoteServiceTest" time="0.002"/>
+  <testcase name="TrueGetById" classname="ru.netology.NoteServiceTest" time="0.002"/>
+  <testcase name="FalseDeleteNote" classname="ru.netology.NoteServiceTest" time="0.003"/>
+  <testcase name="deleteThrowNote" classname="ru.netology.NoteServiceTest" time="0.009"/>
+  <testcase name="getNote" classname="ru.netology.NoteServiceTest" time="0.004"/>
+  <testcase name="TruedeleteNote" classname="ru.netology.NoteServiceTest" time="0.007"/>
+  <testcase name="TrueEditNote" classname="ru.netology.NoteServiceTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

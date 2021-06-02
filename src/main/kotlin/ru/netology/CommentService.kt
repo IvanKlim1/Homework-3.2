@@ -4,7 +4,7 @@ class CommentService(
     private val noteService: CrudService<Note>
 ) : CrudService<Comment> {
     private var comments = emptyArray<Comment>()
-
+    override fun getAll() = comments
     fun get(comment: Comment): Boolean {
         val notes = noteService.getAll()
         for ((index) in comments.withIndex()) {
